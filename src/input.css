@@ -63,13 +63,74 @@
   }
 
   .nav-link {
-    @apply text-[11px] font-semibold uppercase tracking-[0.16em] text-primary/80 transition-colors hover:text-secondary;
+    @apply text-[11px] font-semibold uppercase tracking-[0.16em] text-primary/80 transition-colors hover:text-primary relative py-1 inline-flex items-center;
+  }
+  .nav-link::after {
+    content: '';
+    position: absolute;
+    bottom: -2px;
+    left: 50%;
+    width: 0;
+    height: 2px;
+    background: #D6B37F;
+    transition: all 0.3s ease;
+    transform: translateX(-50%);
+    border-radius: 2px;
+  }
+  .nav-link:hover::after {
+    width: 100%;
+  }
+
+  .brand-logo-img {
+    border: 1.5px solid #D6B37F;
+    box-shadow: 0 0 10px rgba(214, 179, 127, 0.3);
+    transition: transform 0.3s ease;
+  }
+  .brand-logo-img:hover {
+    transform: scale(1.05);
   }
 
   .stat-divider {
     @apply border-r border-white/20 last:border-r-0;
   }
 }
+
+/* Header Glassmorphism */
+#site-header {
+  background: rgba(248, 246, 242, 0.94);
+  backdrop-filter: blur(16px);
+  -webkit-backdrop-filter: blur(16px);
+  border-bottom: 1px solid rgba(214, 179, 127, 0.25);
+  box-shadow: 0 4px 20px rgba(15, 34, 56, 0.04);
+}
+#site-header.shadow-md {
+  box-shadow: 0 10px 30px rgba(15, 34, 56, 0.12);
+  border-bottom-color: rgba(214, 179, 127, 0.4);
+}
+
+/* Utilities & Form Scoping */
+form input:not([type="checkbox"]):not([type="radio"]),
+form select,
+form textarea {
+  width: 100%;
+  border: 1px solid rgba(15, 34, 56, 0.15);
+  padding: 0.75rem 1rem;
+  font-size: 0.875rem;
+  border-radius: 4px;
+}
+form input:focus, form select:focus, form textarea:focus {
+  outline: none;
+  border-color: #D6B37F;
+}
+
+a.btn-primary, a.btn-secondary, a.btn-gold, a.btn-whatsapp { text-align: center; }
+.justify-center.section-label { justify-content: center; }
+cite { font-style: normal; }
+[role="list"], .list-none { list-style: none; }
+.close-btn { cursor: pointer; }
+.faq-trigger { cursor: pointer; width: 100%; text-align: left; }
+.safe-area-pb { padding-bottom: env(safe-area-inset-bottom, 0px); }
+.bg-cream\/98 { background: rgba(248, 246, 242, 0.98); }
 
 /* Parallax hero — subtle, performance-friendly */
 .hero-parallax {
@@ -111,3 +172,4 @@
     opacity: 1 !important;
   }
 }
+
