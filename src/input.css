@@ -1,0 +1,113 @@
+@tailwind base;
+@tailwind components;
+@tailwind utilities;
+
+@layer base {
+  html {
+    scroll-behavior: smooth;
+  }
+
+  body {
+    @apply font-sans text-text antialiased bg-cream;
+  }
+
+  ::selection {
+    @apply bg-secondary/30 text-primary;
+  }
+}
+
+@layer components {
+  .section-label {
+    @apply inline-flex items-center gap-3 text-[11px] font-semibold uppercase tracking-[0.2em] text-secondary;
+  }
+
+  .section-label::before {
+    content: '';
+    @apply block h-px w-8 bg-secondary;
+  }
+
+  .heading-serif {
+    @apply font-serif text-primary leading-[1.15];
+  }
+
+  .btn-primary {
+    @apply inline-flex items-center justify-center gap-2 bg-primary px-6 py-3.5 text-xs font-semibold uppercase tracking-[0.14em] text-white transition-all duration-300 hover:bg-primary/90 hover:shadow-lg;
+  }
+
+  .btn-secondary {
+    @apply inline-flex items-center justify-center gap-2 border border-primary bg-transparent px-6 py-3.5 text-xs font-semibold uppercase tracking-[0.14em] text-primary transition-all duration-300 hover:bg-primary hover:text-white;
+  }
+
+  .btn-gold {
+    @apply inline-flex items-center justify-center gap-2 bg-secondary px-6 py-3.5 text-xs font-semibold uppercase tracking-[0.14em] text-primary transition-all duration-300 hover:bg-accent hover:shadow-lg;
+  }
+
+  .btn-whatsapp {
+    @apply inline-flex items-center justify-center gap-2 border border-[#25D366] bg-transparent px-6 py-3.5 text-xs font-semibold uppercase tracking-[0.14em] text-[#128C7E] transition-all duration-300 hover:bg-[#25D366] hover:text-white;
+  }
+
+  .luxury-card {
+    @apply bg-white border border-primary/5 shadow-card transition-all duration-300 hover:shadow-luxury hover:-translate-y-0.5;
+  }
+
+  .container-luxury {
+    @apply mx-auto w-full max-w-content px-5 sm:px-8 lg:px-10;
+  }
+
+  .reveal {
+    @apply opacity-0 translate-y-6 transition-all duration-700 ease-out;
+  }
+
+  .reveal.is-visible {
+    @apply opacity-100 translate-y-0;
+  }
+
+  .nav-link {
+    @apply text-[11px] font-semibold uppercase tracking-[0.16em] text-primary/80 transition-colors hover:text-secondary;
+  }
+
+  .stat-divider {
+    @apply border-r border-white/20 last:border-r-0;
+  }
+}
+
+/* Parallax hero — subtle, performance-friendly */
+.hero-parallax {
+  will-change: transform;
+}
+
+/* FAQ accordion */
+.faq-answer {
+  max-height: 0;
+  overflow: hidden;
+  transition: max-height 0.4s ease, padding 0.3s ease;
+}
+
+.faq-item.is-open .faq-answer {
+  max-height: 500px;
+}
+
+.faq-item.is-open .faq-icon {
+  transform: rotate(45deg);
+}
+
+/* Mobile sticky bar offset */
+@media (max-width: 1023px) {
+  body.has-sticky-bar {
+    padding-bottom: 72px;
+  }
+}
+
+/* Reduced motion */
+@media (prefers-reduced-motion: reduce) {
+  html {
+    scroll-behavior: auto;
+  }
+
+  .reveal,
+  .hero-parallax {
+    transition: none !important;
+    transform: none !important;
+    opacity: 1 !important;
+  }
+}

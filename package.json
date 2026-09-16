@@ -1,0 +1,15 @@
+{
+  "name": "godrej-neopolis-hyderabad",
+  "version": "1.0.0",
+  "description": "Production-ready, SEO-first landing page for Godrej Neopolis, Neopolis West Hyderabad",
+  "scripts": {
+    "dev": "npx tailwindcss -i ./src/input.css -o ./dist/output.css --watch",
+    "build": "npx tailwindcss -i ./src/input.css -o ./dist/output.css --minify",
+    "serve": "npx serve ."
+  },
+  "devDependencies": {
+    "tailwindcss": "^3.4.17",
+    "autoprefixer": "^10.4.21",
+    "postcss": "^8.5.3"
+  }
+}
