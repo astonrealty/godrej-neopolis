@@ -452,11 +452,13 @@ button, input, select, textarea { font: inherit; }
 }
 
 /* Grid gaps responsive */
+.gap-3.5 { gap: 0.875rem; }
 .gap-4 { gap: 1rem; }
 .gap-5 { gap: 1.25rem; }
 .gap-6 { gap: 1.5rem; }
 .gap-8 { gap: 2rem; }
 @media (min-width: 1024px) { .lg\:gap-5 { gap: 1.25rem; } .lg\:gap-8 { gap: 2rem; } }
+@media (min-width: 1280px) { .xl\:gap-7 { gap: 1.75rem; } }
 
 /* Order */
 .order-1 { order: 1; }
