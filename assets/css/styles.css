@@ -1274,10 +1274,6 @@ body {
   border-top-width: 1px;
 }
 
-.border-\[\#D6B37F\]\/30 {
-  border-color: rgb(214 179 127 / 0.3);
-}
-
 .border-\[\#D6B37F\]\/40 {
   border-color: rgb(214 179 127 / 0.4);
 }
@@ -1313,11 +1309,6 @@ body {
 
 .border-white\/30 {
   border-color: rgb(255 255 255 / 0.3);
-}
-
-.bg-\[\#0F2238\] {
-  --tw-bg-opacity: 1;
-  background-color: rgb(15 34 56 / var(--tw-bg-opacity, 1));
 }
 
 .bg-\[\#0F2238\]\/90 {
@@ -1428,6 +1419,10 @@ body {
 
 .p-3 {
   padding: 0.75rem;
+}
+
+.p-3\.5 {
+  padding: 0.875rem;
 }
 
 .p-4 {
