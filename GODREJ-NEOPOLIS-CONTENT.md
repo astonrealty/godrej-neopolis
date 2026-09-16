@@ -15,7 +15,7 @@
 | **Project Type** | Premium / Luxury High-Rise Residential |
 | **Configurations** | 3 BHK, 3.5 BHK & 4 BHK |
 | **Unit Sizes** | 2,350 sq. ft. – 3,350 sq. ft. |
-| **Total Residences** | 456 *(website-stated figure)* |
+| **Total Residences** | 980+ Premium Units *(as stated on project page)* |
 | **Tower Structure** | 3 Basements + Ground + 48 Floors (3B + G + 48) |
 | **Open Space** | ~80% claimed open/landscaped space |
 | **Project Status** | Pre-launch *(Telangana RERA clearance awaited)* |
