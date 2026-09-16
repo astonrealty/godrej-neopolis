@@ -844,6 +844,10 @@ body {
   bottom: 1rem;
 }
 
+.bottom-6 {
+  bottom: 1.5rem;
+}
+
 .left-0 {
   left: 0px;
 }
@@ -852,8 +856,16 @@ body {
   left: 1rem;
 }
 
+.left-6 {
+  left: 1.5rem;
+}
+
 .right-0 {
   right: 0px;
+}
+
+.right-6 {
+  right: 1.5rem;
 }
 
 .top-0 {
@@ -899,6 +911,10 @@ body {
 
 .mb-4 {
   margin-bottom: 1rem;
+}
+
+.mt-1 {
+  margin-top: 0.25rem;
 }
 
 .mt-10 {
@@ -1003,6 +1019,10 @@ body {
 
 .h-8 {
   height: 2rem;
+}
+
+.h-\[320px\] {
+  height: 320px;
 }
 
 .h-auto {
@@ -1362,6 +1382,11 @@ body {
   --tw-gradient-from: rgb(15 34 56 / 0.9) var(--tw-gradient-from-position);
   --tw-gradient-to: rgb(15 34 56 / 0) var(--tw-gradient-to-position);
   --tw-gradient-stops: var(--tw-gradient-from), var(--tw-gradient-to);
+}
+
+.via-primary\/30 {
+  --tw-gradient-to: rgb(15 34 56 / 0)  var(--tw-gradient-to-position);
+  --tw-gradient-stops: var(--tw-gradient-from), rgb(15 34 56 / 0.3) var(--tw-gradient-via-position), var(--tw-gradient-to);
 }
 
 .via-primary\/70 {
@@ -1794,6 +1819,10 @@ body {
   transition-duration: 300ms;
 }
 
+.duration-700 {
+  transition-duration: 700ms;
+}
+
 /* Header Glassmorphism */
 
 #site-header {
@@ -1949,6 +1978,12 @@ cite {
   outline-offset: 2px;
 }
 
+.group:hover .group-hover\:scale-\[1\.02\] {
+  --tw-scale-x: 1.02;
+  --tw-scale-y: 1.02;
+  transform: translate(var(--tw-translate-x), var(--tw-translate-y)) rotate(var(--tw-rotate)) skewX(var(--tw-skew-x)) skewY(var(--tw-skew-y)) scaleX(var(--tw-scale-x)) scaleY(var(--tw-scale-y));
+}
+
 .group:hover .group-hover\:border-\[\#D6B37F\]\/70 {
   border-color: rgb(214 179 127 / 0.7);
 }
@@ -1976,6 +2011,10 @@ cite {
     display: inline-flex;
   }
 
+  .sm\:h-\[420px\] {
+    height: 420px;
+  }
+
   .sm\:grid-cols-2 {
     grid-template-columns: repeat(2, minmax(0, 1fr));
   }
@@ -1988,8 +2027,17 @@ cite {
     flex-direction: row;
   }
 
+  .sm\:items-end {
+    align-items: flex-end;
+  }
+
   .sm\:p-8 {
     padding: 2rem;
+  }
+
+  .sm\:text-3xl {
+    font-size: 1.875rem;
+    line-height: 2.25rem;
   }
 
   .sm\:text-4xl {
@@ -2005,6 +2053,11 @@ cite {
   .sm\:text-lg {
     font-size: 1.125rem;
     line-height: 1.75rem;
+  }
+
+  .sm\:text-sm {
+    font-size: 0.875rem;
+    line-height: 1.25rem;
   }
 }
 
@@ -2028,6 +2081,18 @@ cite {
 }
 
 @media (min-width: 1024px) {
+  .lg\:bottom-10 {
+    bottom: 2.5rem;
+  }
+
+  .lg\:left-10 {
+    left: 2.5rem;
+  }
+
+  .lg\:right-10 {
+    right: 2.5rem;
+  }
+
   .lg\:order-1 {
     order: 1;
   }
@@ -2058,6 +2123,10 @@ cite {
 
   .lg\:h-8 {
     height: 2rem;
+  }
+
+  .lg\:h-\[480px\] {
+    height: 480px;
   }
 
   .lg\:grid-cols-2 {
