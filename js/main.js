@@ -12,7 +12,7 @@
     whatsapp: '919032782348',
     brochureUrl: './assets/downloads/godrej-neopolis-brochure.pdf',
     formEndpoint: 'https://formspree.io/f/xqeadorl',
-    googleSheetEndpoint: 'https://script.google.com/macros/s/AKfycbxRb6go4Sx3A2t9NYVgbczOB3Dib5Paf32wK7PosrBTyjSKq08Ix3tLnk7elUnUHzaLrA/exec',
+    googleSheetEndpoint: 'https://script.google.com/macros/s/AKfycbyOx6e7OsuH7eIOTzl84mGhBUwynFlsnDwtuws-zQn_JPc8G5fXxjQTK4lKPv5n3-c6/exec',
   };
 
   // ========== DOM refs ==========
