@@ -12,6 +12,7 @@
     whatsapp: '919032782348',
     brochureUrl: './assets/downloads/godrej-neopolis-brochure.pdf',
     formEndpoint: 'https://formspree.io/f/xqeadorl',
+    googleSheetEndpoint: 'https://script.google.com/macros/s/AKfycbxRb6go4Sx3A2t9NYVgbczOB3Dib5Paf32wK7PosrBTyjSKq08Ix3tLnk7elUnUHzaLrA/exec',
   };
 
   // ========== DOM refs ==========
@@ -147,13 +148,32 @@
       };
 
       try {
+        const requests = [];
+
+        // 1. Submit to Formspree
         if (CONFIG.formEndpoint) {
-          await fetch(CONFIG.formEndpoint, {
-            method: 'POST',
-            headers: { 'Content-Type': 'application/json' },
-            body: JSON.stringify(payload),
-          });
+          requests.push(
+            fetch(CONFIG.formEndpoint, {
+              method: 'POST',
+              headers: { 'Content-Type': 'application/json' },
+              body: JSON.stringify(payload),
+            }).catch((err) => console.error('Formspree submission error:', err))
+          );
         }
+
+        // 2. Submit to Google Sheet Endpoint
+        if (CONFIG.googleSheetEndpoint) {
+          requests.push(
+            fetch(CONFIG.googleSheetEndpoint, {
+              method: 'POST',
+              mode: 'no-cors',
+              headers: { 'Content-Type': 'application/json' },
+              body: JSON.stringify(payload),
+            }).catch((err) => console.error('Google Sheet submission error:', err))
+          );
+        }
+
+        await Promise.allSettled(requests);
 
         // Track conversion — connect Meta Pixel / Google Ads gtag here
         if (typeof gtag === 'function') {
