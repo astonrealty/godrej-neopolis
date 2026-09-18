@@ -163,12 +163,17 @@
 
         // 2. Submit to Google Sheet Endpoint
         if (CONFIG.googleSheetEndpoint) {
+          const formBody = new URLSearchParams();
+          Object.keys(payload).forEach((key) => {
+            formBody.append(key, payload[key] || '');
+          });
+
           requests.push(
             fetch(CONFIG.googleSheetEndpoint, {
               method: 'POST',
               mode: 'no-cors',
-              headers: { 'Content-Type': 'application/json' },
-              body: JSON.stringify(payload),
+              headers: { 'Content-Type': 'application/x-www-form-urlencoded' },
+              body: formBody.toString(),
             }).catch((err) => console.error('Google Sheet submission error:', err))
           );
         }
