@@ -278,12 +278,12 @@
         function shouldShowForm() {
           return !sessionStorage.getItem('formSubmitted');
         }
-        window.showContactForm = () => {
+        window.showContactForm = (force = false) => {
           if (window.formCurrentlyOpen) {
             return;
           }
 
-          if (shouldShowForm()) {
+          if (force || shouldShowForm()) {
             const formPopup = document.querySelector('#contact-form-popup');
             if (formPopup) {
               window.formCurrentlyOpen = true;
@@ -305,7 +305,7 @@
               history.replaceState(null, null, window.location.pathname + window.location.search);
             }
             window.scrollTo(0, scrollY);
-            showContactForm();
+            showContactForm(true);
             return false;
           }
         }
@@ -319,7 +319,7 @@
             e.preventDefault();
             e.stopPropagation();
             const currentScroll = window.scrollY || window.pageYOffset;
-            showContactForm();
+            showContactForm(true);
             setTimeout(() => {
               window.scrollTo(0, currentScroll);
             }, 10);
@@ -338,7 +338,7 @@
           enquireBtn.innerHTML = 'Enquire Now';
           enquireBtn.style.cssText = 'position:fixed;left:0;top:50%;writing-mode:vertical-rl;text-orientation:mixed;background:linear-gradient(135deg,#0F2238,#08121c);color:#fff;padding:20px 12px;font-family:\'Plus Jakarta Sans\',sans-serif;font-size:0.95rem;font-weight:600;text-decoration:none;border-radius:0 1.2rem 1.2rem 0;box-shadow:2px 4px 8px rgba(0,0,0,0.2);transition:all 0.3s ease;will-change:transform, opacity, box-shadow;border:1px solid #d6b37f;backdrop-filter:blur(5px);z-index:10000;opacity:0;transform:translateY(-50%) translateX(-20px);';
           enquireBtn.addEventListener('click', () => {
-            showContactForm();
+            showContactForm(true);
             try { gtag('event', 'form_open_button', { event_category: 'engagement' }); } catch (e) { }
             try { fbq('track', 'Lead'); } catch (e) { }
           });
@@ -545,7 +545,7 @@
       setTimeout(() => {
         if (window.location.hash === '#open-form') {
           if (window.showContactForm) {
-            window.showContactForm();
+            window.showContactForm(true);
             if (history.replaceState) {
               history.replaceState(null, null, window.location.pathname + window.location.search);
             }
